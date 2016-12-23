@@ -9,7 +9,7 @@ namespace BatchWAVtoMP3
         public const string fileExtension = ".mp3";
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter your music directory's path: ");
+            Console.WriteLine("Enter your directory's path: ");
             string path = Console.ReadLine();
             string[] files = Directory.GetFiles(path);
             foreach (string file in files)
