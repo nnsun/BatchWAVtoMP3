@@ -14,7 +14,7 @@ namespace BatchWAVtoMP3
             string[] files = Directory.GetFiles(path);
             foreach (string file in files)
             {
-                int dotIndex = file.IndexOf('.');
+                int dotIndex = file.LastIndexOf('.');
                 string newFile = file.Substring(0, dotIndex);
                 newFile += fileExtension;
                 Process process = new Process();
@@ -23,7 +23,6 @@ namespace BatchWAVtoMP3
                 process.StartInfo.Arguments = string.Format("-b 128 \"{0}\" \"{1}\"", file, newFile);
                 process.Start();
                 process.WaitForExit();
-                File.Delete(file);
             }
         }
     }
