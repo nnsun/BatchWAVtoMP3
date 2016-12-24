@@ -1,6 +1,6 @@
 # What it does
 
-BatchWAVtoMP3 prompts for a folder path and encodes all uncompressed \*.wav files in the directory to 128 kbps \*.mp3 files. The \*.wav files are then deleted.
+BatchWAVtoMP3 prompts for a folder path and encodes all uncompressed \*.wav files in the directory to 128 kbps \*.mp3 files.
 
 # Getting Started
 
