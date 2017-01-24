@@ -17,10 +17,15 @@ namespace BatchWAVtoMP3
                 int dotIndex = file.LastIndexOf('.');
                 string newFile = file.Substring(0, dotIndex);
                 newFile += fileExtension;
-                Process process = new Process();
-                process.StartInfo.UseShellExecute = false;
-                process.StartInfo.FileName = "lame.exe";
-                process.StartInfo.Arguments = string.Format("-b 128 \"{0}\" \"{1}\"", file, newFile);
+                Process process = new Process
+                {
+                    StartInfo =
+                    {
+                        UseShellExecute = false,
+                        FileName = "lame.exe",
+                        Arguments = $"-b 128 \"{file}\" \"{newFile}\""
+                    }
+                };
                 process.Start();
                 process.WaitForExit();
             }
